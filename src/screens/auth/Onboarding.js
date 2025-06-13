@@ -1,34 +1,36 @@
 import React, { useRef, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Dimensions } from 'react-native';
 import { Image } from 'expo-image';
-import { Font, Colors } from '../constants';
-import { Button } from '../components';
+import { Font, Colors } from '../../constants';
+import { Button } from '../../components';
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
 const slides = [
     {
         id: '1',
-        image: require('../assets/images/illustration.png'),
+        image: require('../../assets/images/illustration.png'),
         title: 'Learn anytime\nand anywhere',
         description: 'Quarantine is the perfect time to spend your day learning something new, from anywhere!',
     },
     {
         id: '2',
-        image: require('../assets/images/illustration-2.png'),
+        image: require('../../assets/images/illustration-2.png'),
         title: 'Find a course for you',
         description: 'Quarantine is the perfect time to spend your day learning something new, from anywhere!',
     },
     {
         id: '3',
-        image: require('../assets/images/illustration-3.png'),
+        image: require('../../assets/images/illustration-3.png'),
         title: 'Improve your skills',
         description: 'Quarantine is the perfect time to spend your day learning something new, from anywhere!',
     }
 ];
 
-export default function Onboarding({ onDone }) {
+export default function Onboarding() {
 
+    const navigation                      = useNavigation();
     const flatListRef                     = useRef();
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -38,11 +40,11 @@ export default function Onboarding({ onDone }) {
     };
 
     const handleNext = () => {
-    if (currentIndex < slides.length - 1) {
-        flatListRef.current.scrollToIndex({ index: currentIndex + 1 });
-    } else {
-        onDone(); // veya navigation.navigate('Home') gibi bir işlem
-    }
+      if (currentIndex < slides.length - 1) {
+          flatListRef.current.scrollToIndex({ index: currentIndex + 1 });
+      } else {
+          navigation.navigate('signin'); // Navigate to SignIn screen
+      }
     };
 
     const renderItem = ({ item }) => (
@@ -55,7 +57,7 @@ export default function Onboarding({ onDone }) {
 
     return (
     <View style={styles.container}>
-        <TouchableOpacity style={styles.skipButton}>
+        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('signin')}>
             <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
 

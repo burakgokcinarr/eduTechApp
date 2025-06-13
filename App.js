@@ -1,9 +1,8 @@
 import { useFonts } from 'expo-font';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { FontLoader } from './src/config/FontConfig';
-import { Font } from './src/constants';
-import Onboarding from './src/screens/Onboarding';
+import { NavigationContainer } from '@react-navigation/native';
+import Router from './src/navigation/Router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
 
@@ -12,23 +11,10 @@ export default function App() {
   if (!loaded && !error) return null;
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Onboarding onDone={() => console.log('Onboarding completed')} />
-    </View>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Router />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  txt: {
-    fontFamily: Font.regular,
-    fontSize: 20,
-    color: '#000',
-  }
-});

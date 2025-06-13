@@ -7,7 +7,7 @@ const COLOR_5        = "#E3562A";
 const COLOR_6        = "#65AAEA";
 const COLOR_7        = "#5BA092";
 const COLOR_8        = "#EF4949";
-const COLOR_9        = "#F2A03F";     
+const COLOR_9        = "#F2A03F";    
 
 export default {
     BG_COLOR,
