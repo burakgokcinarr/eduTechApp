@@ -36,7 +36,7 @@ export default function SignIn() {
 
           <Text style={styles.forgot}>Forgot Password?</Text>
 
-          <Button onClicked={() => console.log('Login pressed')} style={{marginBottom: 10}}>
+          <Button onClicked={() => navigation.navigate('home')} style={{marginBottom: 10}}>
             Log in
           </Button>
 
