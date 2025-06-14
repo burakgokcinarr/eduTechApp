@@ -17,9 +17,9 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
 
   return (
-    <SafeAreaView >
+    <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <View >
+        <View>
           <Image source={bg_image} style={styles.image} contentFit="contain" transition={500}/>
           <View>
             <Text style={styles.title}>Log in</Text>
@@ -53,10 +53,11 @@ export default function SignIn() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
-    width: width * 0.8,
+    width: width,
     height: 250,
     marginBottom: 30
   },

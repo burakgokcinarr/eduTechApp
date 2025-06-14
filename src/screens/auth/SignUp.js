@@ -17,8 +17,8 @@ export default function SignUp() {
   const [password, setPassword] = useState('');
 
   return (
-    <SafeAreaView >
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+    <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={Platform.OS === 'ios' ? 60 : 0}>
         <View >
           <Image source={bg_image} style={styles.image} contentFit="contain" transition={500}/>
           <View>
@@ -47,7 +47,8 @@ export default function SignUp() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
     width: width,
