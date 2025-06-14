@@ -18,7 +18,7 @@ export default function SignIn() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <View>
           <Image source={bg_image} style={styles.image} contentFit="contain" transition={500}/>
           <View>
