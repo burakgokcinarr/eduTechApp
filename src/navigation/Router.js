@@ -11,6 +11,7 @@ export default function Router() {
         headerShown: false,
         gestureEnabled: false,
         headerBackVisible: false,
+        headerShadowVisible: false,
         header: (props) => <Header {...props} />
     }
 

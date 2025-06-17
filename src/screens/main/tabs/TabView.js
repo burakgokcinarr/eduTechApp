@@ -30,11 +30,12 @@ export default function TabView() {
         },
         tabBarStyle: {
           borderTopRightRadius: 16,
-          borderTopLeftRadius: 16
+          borderTopLeftRadius: 16,
         },
+        headerShadowVisible: false
       })}
     >
-      <Tab.Screen name="Course" component={Course} />
+      <Tab.Screen name="Course" component={Course} options={ {headerShown: false} }/>
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
