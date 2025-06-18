@@ -4,7 +4,7 @@ import { Font, Colors } from '../constants'
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 import Category from './Category';
 
-export default function CourseNavBar({ userName = "" }) {
+export default function CourseNavBar({ userName = "", setSearch }) {
 
     const [focused, setFocused] = React.useState(false);
 
@@ -39,6 +39,7 @@ export default function CourseNavBar({ userName = "" }) {
                     null 
                 }
                 <TextInput
+                    onChangeText={setSearch}
                     placeholder='Search course'
                     placeholderTextColor={Colors.COLOR_3}
                     style={[styles.searchInput, focused ? { width: '75%' } : { width: '85%' }]}

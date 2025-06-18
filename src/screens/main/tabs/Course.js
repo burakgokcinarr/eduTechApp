@@ -1,18 +1,35 @@
 import { StyleSheet, Text, View, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Font, Colors } from '../../../constants'
-import { CourseNavBar } from '../../../components'
+import { CourseNavBar, Card } from '../../../components'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { LegendList } from "@legendapp/list";
+import { items } from '../../../data/data'
 
-const user_image = require('../../../assets/images/settings.png')
 const { width }  = Dimensions.get('window');
 
 export default function Course() {
 
+  const [search, setSearch] = React.useState("");
+
+  const filteredItems = items.filter(item =>
+    item.title.toLowerCase().includes(search.toLowerCase()) ||
+    item.subTitle.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <SafeAreaView style={styles.container}>
-      <CourseNavBar userName="Burak Gökçınar" />
-  
+      <CourseNavBar userName="Burak Gökçınar" setSearch={setSearch}/>
+      {
+        search && <Text style={styles.resultTextCount}> {filteredItems.length} Results</Text>
+      }
+      <LegendList
+        data={filteredItems}
+        renderItem={({ item }) => <Card data={item}/>}
+        keyExtractor={(item) => item.id}
+        recycleItems
+        showsVerticalScrollIndicator={false}
+      />
     </SafeAreaView>
   )
 }
@@ -49,6 +66,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: Colors.COLOR_3,
+    borderColor: Colors.COLOR_4,
   },
+  resultTextCount: {
+    fontSize: 28,
+    fontFamily: Font.medium
+  }
 })
