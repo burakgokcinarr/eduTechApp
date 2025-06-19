@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Image } from 'expo-image'
 import { Font, Colors } from '../constants'
+import { useNavigation } from '@react-navigation/native'
 
 export default function Card({ data = null }) {
+
+    const navigation = useNavigation();
+
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('detail', { cellData: data })}>
             <View>
                 <Image
                     style={[styles.image, { backgroundColor: data.bgColor }]}
@@ -20,7 +24,7 @@ export default function Card({ data = null }) {
                 <Text style={styles.title}>{data.title}</Text>
                 <Text style={styles.subText}>{data.subTitle}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

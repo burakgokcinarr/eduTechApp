@@ -7,7 +7,8 @@ export const items = [
         image: require('../assets/images/card.png'), 
         subTitle: "Advanced mobile interface design", 
         price: "$50", 
-        bgColor: Colors.COLOR_4 
+        bgColor: Colors.COLOR_4,
+        desc: "You can launch a new career in web development today by learning HTML & CSS. You don't need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust."
     },
     { 
         id: "2", 
@@ -15,7 +16,8 @@ export const items = [
         image: require('../assets/images/card2.png'), 
         subTitle: "Advanced mobile interface design", 
         price: "$150", 
-        bgColor: Colors.COLOR_4 
+        bgColor: Colors.COLOR_4,
+        desc: "You can launch a new career in web development today by learning HTML & CSS. You don't need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust."
     },
     { 
         id: "3", 
@@ -23,7 +25,8 @@ export const items = [
         image: require('../assets/images/card3.png'), 
         subTitle: "Advanced mobile interface design", 
         price: "$75", 
-        bgColor: Colors.COLOR_4 
+        bgColor: Colors.COLOR_4,
+        desc: "You can launch a new career in web development today by learning HTML & CSS. You don't need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust."
     },
     { 
         id: "4", 
@@ -31,7 +34,8 @@ export const items = [
         image: require('../assets/images/card.png'), 
         subTitle: "Advanced mobile interface design", 
         price: "$200", 
-        bgColor: Colors.COLOR_4 
+        bgColor: Colors.COLOR_4,
+        desc: "You can launch a new career in web development today by learning HTML & CSS. You don't need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust."
     },
     { 
         id: "5", 
@@ -39,7 +43,8 @@ export const items = [
         image: require('../assets/images/card2.png'), 
         subTitle: "Advanced mobile interface design", 
         price: "$50",
-        bgColor: Colors.COLOR_4 
+        bgColor: Colors.COLOR_4,
+        desc: "You can launch a new career in web development today by learning HTML & CSS. You don't need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust."
     },
     { 
         id: "6",
@@ -47,6 +52,7 @@ export const items = [
         image: require('../assets/images/card3.png'), 
         subTitle: "Advanced mobile interface design", 
         price: "$75", 
-        bgColor: Colors.COLOR_4 
+        bgColor: Colors.COLOR_4,
+        desc: "You can launch a new career in web development today by learning HTML & CSS. You don't need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust."
     }
 ];
